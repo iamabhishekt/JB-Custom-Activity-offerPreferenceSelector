@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf8" />
     <title>Offer Preference Selector</title>
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+      (function () {
+        var config = {
+          baseUrl: "",
+        };
+
+        var dependencies = ["offerPreferenceSelector"];
+
+        require(config, dependencies);
+      })();
+    </script>
+
     <link rel="stylesheet" href="https://unpkg.com/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css">
-    <style>
-        .slds-box {
-            margin: 20px auto;
-            max-width: 500px;
-        }
+    <style type="text/css">
+      body, html {
+        padding: 20px;
+        margin: 0;
+        background: #fff;
+        height: 100%;
+      }
+      .step {
+        display: none;
+      }
+      #step1 {
+        display: block;
+      }
+      .slds-form-element {
+        width: auto;
+        max-width: 300px;
+      }
+      .slds-button {
+        margin-top: 10px;
+      }
     </style>
-</head>
-<body>
-    <div class="slds-scope">
-        <div class="slds-box slds-theme_default">
-            <h1 class="slds-text-heading_large">Select Your Offer Preferences</h1>
-            <form id="preferenceForm">
-                <div class="slds-form-element">
-                    <div class="slds-form-element__control">
-                        <label class="slds-checkbox">
-                            <input type="checkbox" name="offer" value="Buy one, get one free">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">Buy one, get one free</span>
-                        </label>
-                        <label class="slds-checkbox">
-                            <input type="checkbox" name="offer" value="20% off your next purchase">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">20% off your next purchase</span>
-                        </label>
-                        <label class="slds-checkbox">
-                            <input type="checkbox" name="offer" value="Free shipping on orders over $50">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">Free shipping on orders over $50</span>
-                        </label>
-                        <label class="slds-checkbox">
-                            <input type="checkbox" name="offer" value="$10 off your next order">
-                            <span class="slds-checkbox_faux"></span>
-                            <span class="slds-form-element__label">$10 off your next order</span>
-                        </label>
-                    </div>
-                </div>
-                <button type="submit" class="slds-button slds-button_brand slds-m-top_medium">Save Preferences</button>
-            </form>
+  </head>
+  <body>
+    <div id="step1" class="step slds-scope">
+      <div class="slds-form-element">
+        <label class="slds-form-element__label slds-text-title_bold" for="offerPreference">Select your preferred offer type:</label>
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select class="slds-select" id="offerPreference" name="offerPreference">
+              <option value="" selected>Select an option</option>
+              <option value="discounts">Discounts</option>
+              <option value="newProducts">New Product Announcements</option>
+              <option value="exclusiveOffers">Exclusive Member Offers</option>
+            </select>
+          </div>
         </div>
+      </div>
+
+      <button id="toggleLastStep" class="slds-button slds-button_brand">Toggle Last Step</button>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-    <script src="https://npmcdn.com/postmonger@4/postmonger.js"></script>
-    <script src="offerPreferenceSelector.js"></script>
-</body>
+
+    <div id="step2" class="step">
+      Here's a second page with some info on it.
+    </div>
+
+    <div id="step3" class="step">
+      You chose the offer type:
+      <div id="message"></div>
+    </div>
+
+    <div id="step4" class="step">
+      Hey, here's a fourth step, just for you. Toggle this on or off from step 1.
+    </div>
+  </body>
 </html>
