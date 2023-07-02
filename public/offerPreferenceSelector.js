@@ -200,4 +200,3 @@ define(["postmonger"], function (Postmonger) {
       return $("#offerPreference").find("option:selected").attr("value").trim();
     }
   });
-  
