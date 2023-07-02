@@ -1,0 +1,68 @@
+{
+	"workflowApiVersion": "1.1",
+	"metaData": {
+		"icon": "images/offer.png",
+		"category": "message"
+	},
+	"type": "offerPreferenceSelector",
+	"lang": {
+		"en-US": {
+			"name": "Offer Preference Selector",
+			"description": "A custom Journey Builder activity to select offer preferences."
+		}
+	},
+	"arguments": {
+		"execute": {
+			"inArguments": [{
+				"selectedOffers": "{{Contact.Attribute.offerPreferenceSelector.SelectedOffers}}"
+			}],
+			"outArguments": [],
+			"url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/execute"
+		}
+	},
+	"configurationArguments": {
+		"applicationExtensionKey": "offerPreferenceSelector",
+		"save": {
+			"url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/save"
+		},
+		"publish": {
+			"url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/publish"
+		},
+		"validate": {
+			"url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/validate"
+		},
+		"stop": {
+			"url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/stop"
+		}
+	},
+	"wizardSteps": [{
+			"label": "Select Offers",
+			"key": "selectOffers"
+		},
+		{
+			"label": "Confirm",
+			"key": "confirm"
+		}
+	],
+	"userInterfaces": {
+		"configModal": {
+			"height": 600,
+			"width": 800,
+			"fullscreen": false
+		}
+	},
+	"schema": {
+		"arguments": {
+			"execute": {
+				"inArguments": [{
+					"selectedOffers": {
+						"dataType": "Text",
+						"isNullable": false,
+						"direction": "in"
+					}
+				}],
+				"outArguments": []
+			}
+		}
+	}
+}
