@@ -27,21 +27,21 @@
             }
           }
         ],
-        "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/execute"
+        "url": "https://jb-custom-activity-j2wd.onrender.com/execute"
       }
     },
     "configurationArguments": {
       "save": {
-        "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/save"
+        "url": "https://jb-custom-activity-j2wd.onrender.com/save"
       },
       "publish": {
-        "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/publish"
+        "url": "https://jb-custom-activity-j2wd.onrender.com/publish"
       },
       "validate": {
-        "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/validate"
+        "url": "https://jb-custom-activity-j2wd.onrender.com/validate"
       },
       "stop": {
-        "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/stop"
+        "url": "https://jb-custom-activity-j2wd.onrender.com/stop"
       }
     },
     "wizardSteps": [
