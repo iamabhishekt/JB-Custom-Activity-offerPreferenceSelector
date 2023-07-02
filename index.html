@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Offer Preference Selector</title>
+    <link rel="stylesheet" href="https://unpkg.com/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css">
+    <style>
+        .slds-box {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slds-scope">
+        <div class="slds-box slds-theme_default">
+            <h1 class="slds-text-heading_large">Select Your Offer Preferences</h1>
+            <form id="preferenceForm">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <label class="slds-checkbox">
+                            <input type="checkbox" name="offer" value="Buy one, get one free">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">Buy one, get one free</span>
+                        </label>
+                        <label class="slds-checkbox">
+                            <input type="checkbox" name="offer" value="20% off your next purchase">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">20% off your next purchase</span>
+                        </label>
+                        <label class="slds-checkbox">
+                            <input type="checkbox" name="offer" value="Free shipping on orders over $50">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">Free shipping on orders over $50</span>
+                        </label>
+                        <label class="slds-checkbox">
+                            <input type="checkbox" name="offer" value="$10 off your next order">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">$10 off your next order</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="slds-button slds-button_brand slds-m-top_medium">Save Preferences</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+    <script src="https://npmcdn.com/postmonger@4/postmonger.js"></script>
+    <script src="customActivity.js"></script>
+</body>
+</html>
