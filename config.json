@@ -14,16 +14,28 @@
   "arguments": {
     "execute": {
       "inArguments": [
-        {
-          "offerPreference": "{{Interaction.offerPreference}}"
-        }
+				{
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+				{
+					"firstName": "{{InteractionDefaults.FirstName}}"
+				},
+				{
+					"lastName": "{{InteractionDefaults.LastName}}"
+				},
+				{
+					"offerPreference": "{{Interaction.offerPreference}}"
+				}
       ],
-      "outArguments": [],
+      "outArguments": [
+				{
+					"foundOfferPreference": ""
+				}
+			],
       "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/execute"
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "OfferPreferenceSelector",
     "save": {
       "url": "https://jb-custom-activity-offerpreferenceselector.iamabhishekt.repl.co/save"
     },
@@ -40,7 +52,8 @@
   "wizardSteps": [
     { "label": "Step 1", "key": "step1" },
     { "label": "Step 2", "key": "step2" },
-    { "label": "Step 3", "key": "step3" }
+    { "label": "Step 3", "key": "step3" },
+		{ "label": "Step 4", "key": "step4", "active": false }
   ],
   "userInterfaces": {
     "configModal": {
@@ -54,14 +67,37 @@
       "execute": {
         "inArguments": [
           {
+						"emailAddress": {
+							"dataType": "EmailAddress",
+							"isNullable": false,
+							"direction": "in"
+						},
+						"firstName": {
+							"dataType": "Text",
+							"isNullable": false,
+							"direction": "in"
+						},
+						"lastName": {
+							"dataType": "Text",
+							"isNullable": false,
+							"direction": "in"
+						},
             "offerPreference": {
               "dataType": "Text",
-              "isNullable": false,
+              "isNullable": true,
               "direction": "in"
             }
           }
         ],
-        "outArguments": []
+        "outArguments": [
+					{
+						"foundOfferPreference": {
+							"dataType": "Text",
+							"direction": "out",
+							"access": "visible"
+						}
+					}
+				]
       }
     }
   }
