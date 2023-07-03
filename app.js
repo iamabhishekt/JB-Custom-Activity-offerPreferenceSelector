@@ -21,7 +21,7 @@ app.post( '/execute', (req, res) => {
         const offerPreference = inArguments[0].offerPreference;
         if (offerPreference) {
             console.log('offerPreference found');
-            foundOfferPreference = offerPreference;
+            foundOfferPreference = offerPreference.string;
         } else {
             console.log('offerPreference not found');
         }
