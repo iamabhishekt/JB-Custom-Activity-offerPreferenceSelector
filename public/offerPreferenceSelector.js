@@ -35,7 +35,7 @@ define(["postmonger"], function (Postmonger) {
         var offerPreference = getOfferPreference();
         connection.trigger("updateButton", {
           button: "next",
-          enabled: Boolean(offerPreference),
+          enabled: Boolean(offerPreference && offerPreference.trim() !== ''), // Check that offerPreference is not blank
         });
   
         $("#message").html(offerPreference);

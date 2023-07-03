@@ -19,11 +19,11 @@ app.post( '/execute', (req, res) => {
     if (inArguments && inArguments.length > 0) {
         console.log('inArguments found');
         const offerPreference = inArguments[0].offerPreference;
-        if (offerPreference) {
+        if (offerPreference && offerPreference.string.trim() !== '') { // Check that offerPreference is not blank
             console.log('offerPreference found');
             foundOfferPreference = offerPreference.string;
         } else {
-            console.log('offerPreference not found');
+            console.log('offerPreference not found or blank');
         }
     } else {
         console.log('inArguments not found');
@@ -39,6 +39,7 @@ app.post( '/execute', (req, res) => {
 
     res.status(200).json(response);
 });
+
 
 app.post( '/save', (req, res) => {
     // Save logic here
