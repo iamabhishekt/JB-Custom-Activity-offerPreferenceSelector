@@ -14,31 +14,30 @@ app.post( '/execute', (req, res) => {
     console.log('Execute route called');
     console.log(req.body);
     const inArguments = req.body.inArguments;
+    let foundOfferPreference = "offerPreference not found"; // Default value
 
     if (inArguments && inArguments.length > 0) {
         console.log('inArguments found');
         const offerPreference = inArguments[0].offerPreference;
         if (offerPreference) {
             console.log('offerPreference found');
-            const foundOfferPreference = offerPreference; 
-
-            const response = {
-                outArguments: [
-                    {
-                        foundOfferPreference: foundOfferPreference
-                    }
-                ]
-            };
-
-            res.status(200).json(response);
+            foundOfferPreference = offerPreference;
         } else {
             console.log('offerPreference not found');
-            res.status(400).end();
         }
     } else {
         console.log('inArguments not found');
-        res.status(400).end();
     }
+
+    const response = {
+        outArguments: [
+            {
+                foundOfferPreference: foundOfferPreference
+            }
+        ]
+    };
+
+    res.status(200).json(response);
 });
 
 app.post( '/save', (req, res) => {
