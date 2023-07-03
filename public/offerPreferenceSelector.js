@@ -190,6 +190,7 @@ define(["postmonger"], function (Postmonger) {
       payload.name = name;
   
       payload["arguments"].execute.inArguments = [{ offerPreference: value }];
+      console.log('Offer preference:', value);
   
       payload["metaData"].isConfigured = true;
   
