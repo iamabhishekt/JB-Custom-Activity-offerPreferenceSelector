@@ -14,10 +14,30 @@ app.post( '/execute', (req, res) => {
     // Execute logic here
     console.log('Execute route called');
     console.log(req.body);
-    // You'll probably want to do something with the incoming execute request
-    // For now we're just going to respond with a 200
-    res.status(200).end();
+    const inArguments = req.body.inArguments;
+
+    if (inArguments && inArguments.length > 0) {
+        const offerPreference = inArguments[0].offerPreference;
+
+        // You'll need to implement your own logic here to find the matching offerPreference.
+        // If it's simply a direct match, it may look like this:
+        const foundOfferPreference = offerPreference; 
+
+        // Prepare the response with the outArgument
+        const response = {
+            outArguments: [
+                {
+                    foundOfferPreference: foundOfferPreference
+                }
+            ]
+        };
+
+        res.status(200).json(response);
+    } else {
+        res.status(400).end();
+    }
 });
+
 
 app.post( '/save', (req, res) => {
     // Save logic here
