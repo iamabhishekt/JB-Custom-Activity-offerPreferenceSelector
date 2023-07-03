@@ -1,5 +1,5 @@
 // app.js
-
+var cors = require('cors')
 var express = require( 'express' );
 var bodyParser = require('body-parser');
 var app = express();
@@ -7,7 +7,7 @@ var port = process.env.PORT || 3000;
 
 // support json encoded bodies
 app.use(bodyParser.json()); 
-
+app.use(cors())
 app.use( express.static('public') );
 
 app.post( '/execute', (req, res) => {
@@ -19,11 +19,11 @@ app.post( '/execute', (req, res) => {
     if (inArguments && inArguments.length > 0) {
         console.log('inArguments found');
         const offerPreference = inArguments[0].offerPreference;
-        if (offerPreference) { // Check that offerPreference is not blank
+        if (offerPreference !== undefined) { // Check that offerPreference is not undefined
             console.log('offerPreference found');
             foundOfferPreference = offerPreference;
         } else {
-            console.log('offerPreference not found or blank');
+            console.log('offerPreference not found or undefined');
         }
     } else {
         console.log('inArguments not found');
