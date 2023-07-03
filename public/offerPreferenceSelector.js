@@ -159,13 +159,13 @@ define(["postmonger"], function (Postmonger) {
             button: "back",
             visible: true,
           });
-          if (lastStepEnabled) {
-            connection.trigger("updateButton", {
-              button: "next",
-              text: "next",
-              visible: true,
-            });
-          } else {
+          // if (lastStepEnabled) {
+          //   connection.trigger("updateButton", {
+          //     button: "next",
+          //     text: "next",
+          //     visible: true,
+          //   });
+          // } else {
             connection.trigger("updateButton", {
               button: "next",
               text: "done",
@@ -173,8 +173,8 @@ define(["postmonger"], function (Postmonger) {
             });
           }
           break;
-        case "step4":
-          $("#step4").show();
+        // case "step4":
+        //   $("#step4").show();
           break;
       }
     }

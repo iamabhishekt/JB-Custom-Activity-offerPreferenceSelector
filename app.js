@@ -19,9 +19,9 @@ app.post( '/execute', (req, res) => {
     if (inArguments && inArguments.length > 0) {
         console.log('inArguments found');
         const offerPreference = inArguments[0].offerPreference;
-        if (offerPreference && offerPreference.string.trim() !== '') { // Check that offerPreference is not blank
+        if (offerPreference) { // Check that offerPreference is not blank
             console.log('offerPreference found');
-            foundOfferPreference = offerPreference.string;
+            foundOfferPreference = offerPreference;
         } else {
             console.log('offerPreference not found or blank');
         }
